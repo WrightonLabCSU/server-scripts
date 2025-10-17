@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filter_hits"
+version = "0.1.0"
+description = "Filter hits from mmseqs (BLAST-style) or BLAST output based on bit-score and number of hits per query sequence."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Madeline Scyphers", email = "mescyphers@gmail.com"},
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "click>=8.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0"
+] 
+
+[project.scripts]
+filter_hits = "__main__:main"
