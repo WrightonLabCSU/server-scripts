@@ -23,4 +23,7 @@ dev = [
 ] 
 
 [project.scripts]
-filter_hits = "__main__:main"
+filter_hits = "filter_hits.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["filter_hits*"]

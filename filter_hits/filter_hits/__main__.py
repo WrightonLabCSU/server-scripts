@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 @click.command(context_settings={'show_default': True})
+@click.version_option()
 @click.option(
     "-i",
     "--input",

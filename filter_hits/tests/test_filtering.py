@@ -3,11 +3,6 @@ import io
 import shlex
 import os
 from pathlib import Path
-import sys
-
-# Add the parent directory to the system path
-sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
-
 from filter_hits.__main__ import filter_hits
 
 
