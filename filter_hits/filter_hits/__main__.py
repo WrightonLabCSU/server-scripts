@@ -30,7 +30,7 @@ from pathlib import Path
 @click.option(
     "-qcol", "--qseqid-col", type=int, default=1, help="Query sequence ID column."
 )
-@click.option("-bcol", "--bitscore-col", type=int, default=-1, help="Bitscore column.")
+@click.option("-bcol", "--bitscore-col", type=int, default=-1, help="Bitscore column (-1 specifies last column).")
 def main(
     input: Path,
     output: Path,
