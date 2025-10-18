@@ -4,12 +4,20 @@ This script filters hits from mmseqs (BLAST-style) or BLAST output based on bit-
 
 ## Install
 
-Install the conda environment:
+Install the conda environment from the main environment file if the environment is not already installed:
 
 ```
-curl -o environment.yml https://raw.githubusercontent.com/WrightonLabCSU/server-scripts/refs/heads/main/filter_hits/environment.yaml
+curl -o environment.yml https://raw.githubusercontent.com/WrightonLabCSU/server-scripts/refs/heads/main/environment.yaml
 conda env create -f environment.yaml
-conda activate filter_hits # Don't forget this step
+conda activate server_scripts # Don't forget this step
+```
+
+If the environment is already installed, you can update it with:
+
+```
+curl -o environment.yml https://raw.githubusercontent.com/WrightonLabCSU/server-scripts/refs/heads/main/environment.yaml
+conda env update -f environment.yaml --prune
+conda activate server_scripts # Don't forget this step
 ```
 
 optionally delete the environment file:
@@ -28,3 +36,9 @@ pip install "git+https://github.com/WrightonLabCSU/server-scripts.git@main#subdi
 
 First use `--help` to see all options. You can filter based on a minimum bitscore,
 and take the top n hits per query sequence, as well as specify what column contains bitscorew and query sequence ID.
+
+Example usage:
+
+```
+filter_hits -i <INPUT> -o <OUTDIR> -n <NUM-HITS> -b <BITSCORE>
+```
